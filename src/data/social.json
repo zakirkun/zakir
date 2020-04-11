@@ -1,6 +1,11 @@
 {
   "links": [
     {
+      "title": "Facebook",
+      "icon": "fa-facebook",
+      "url": "https://fb.me/r00t.go.if"
+    },
+    {
       "type": "twitter",
       "title": "Twitter",
       "icon": "fa-twitter",
