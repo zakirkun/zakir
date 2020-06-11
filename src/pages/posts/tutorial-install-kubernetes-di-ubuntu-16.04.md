@@ -41,12 +41,12 @@ Sebelum memulai, Anda harus mengkonfigurasi file host dan nama host pada setiap 
 
 Pertama, buka file / etc / hosts di server pertama:
 
-> nano / etc / hosts
+    $ nano /etc/hosts
 
 Tambahkan baris berikut:
 
-> 192.168.0.103 master-node  
-> 192\.168.0.104 slave-node
+    192.168.0.103 master-node
+    192.168.0.104 slave-node
 
 Simpan dan tutup file ketika Anda selesai, lalu atur nama host dengan menjalankan perintah berikut:
 
@@ -54,20 +54,18 @@ Simpan dan tutup file ketika Anda selesai, lalu atur nama host dengan menjalanka
 
 Selanjutnya, buka file / etc / hosts di server kedua:
 
-> nano / etc / hosts
+    $ nano /etc/hosts
 
 Tambahkan baris berikut:
 
-> 192.168.0.103 master-node  
-> 192\.168.0.104 slave-node
+    192.168.0.103 master-node
+    192.168.0.104 slave-node
 
 Simpan dan tutup file ketika Anda selesai, lalu atur nama host dengan menjalankan perintah berikut:
 
     $ hostnamectl set-hostname slave-node
 
-Selanjutnya, Anda harus menonaktifkan swap memory pada setiap server. Karena, kubelet tidak mendukung memori swap dan tidak akan berfungsi jika swap aktif atau bahkan ada di file 
-
-> /etc/fstab.
+Selanjutnya, Anda harus menonaktifkan swap memory pada setiap server. Karena, kubelet tidak mendukung memori swap dan tidak akan berfungsi jika swap aktif atau bahkan ada di file /etc/fstab.
 
 Anda dapat menonaktifkan penggunaan memori swap dengan perintah berikut:
 
@@ -79,18 +77,18 @@ Anda dapat menonaktifkan ini secara permanen dengan mengomentari file swap di /e
 
 Komentari baris swap seperti yang ditunjukkan di bawah ini:
 
-> # /etc/fstab: static file system information.  
-> \#  
-> \# Use 'blkid' to print the universally unique identifier for a  
-> \# device; this may be used with UUID= as a more robust way to name devices  
-> \# that works even if disks are added and removed. See fstab(5).  
-> \#  
-> \# <file system> <mount point> <type> <options> <dump> <pass>  
-> \# / was on /dev/sda4 during installation  
-> UUID=6f612675-026a-4d52-9d02-547030ff8a7e / ext4 errors=remount-ro 0 1  
-> \# swap was on /dev/sda6 during installation  
-> \#UUID=46ee415b-4afa-4134-9821-c4e4c275e264 none swap sw 0 0  
-> /dev/sda5 /Data ext4 defaults 0 0
+    # /etc/fstab: static file system information.
+    #
+    # Use 'blkid' to print the universally unique identifier for a
+    # device; this may be used with UUID= as a more robust way to name devices
+    # that works even if disks are added and removed. See fstab(5).
+    #
+    # <file system> <mount point>   <type>  <options>       <dump>  <pass>
+    # / was on /dev/sda4 during installation
+    UUID=6f612675-026a-4d52-9d02-547030ff8a7e /               ext4    errors=remount-ro 0       1
+    # swap was on /dev/sda6 during installation
+    #UUID=46ee415b-4afa-4134-9821-c4e4c275e264 none            swap    sw              0       0
+    /dev/sda5 /Data               ext4   defaults  0 0
 
 Simpan dan tutup file, ketika Anda selesai.
 
