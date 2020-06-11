@@ -5,7 +5,13 @@ subtitle: Pengenalan dasar tentang strapi dan Headless-cms
 date: 2020-06-10T17:00:00Z
 thumb_img_path: "/images/strapi.png"
 content_img_path: "/images/strapi-1.png"
-excerpt: ''
+excerpt: Strapi ini headless-cms. Headless-cms sederhananya itu seperti traditional
+  CMS, tapi nggak punya "kepala" alias front-page.  Kalo di traditional CMS kayak
+  WordPress itu kan ada halaman depannya atau udah ada tampilannya. Nah, di headless-cms
+  ini nggak ada, jadi kita cuma bisa manage content aja di dalamnya.  Headless-cms
+  juga di dalamnya –biasanya– terdapat fitur untuk membuat collections, collection
+  ini berfungsi untuk kita menyimpan data, seperti artikel, kategori, order, user,
+  dan lain sebagainya – kalo di RDBMS itu namanya table.
 
 ---
 Strapi ini headless-cms. Headless-cms sederhananya itu seperti traditional CMS, tapi nggak punya "kepala" alias front-page.
